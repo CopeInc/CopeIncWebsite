@@ -1,4 +1,53 @@
 .App {
   min-height: 100vh;
-  background-color: #f9fafb;
+  background-color: #000000;
+  /* Cool gradient background as fallback */
+  background: linear-gradient(135deg, #000000 0%, #1a0000 25%, #330000 50%, #1a0000 75%, #000000 100%);
+  /* Uncomment the line below and add your background image to frontend/src/assets/background.jpg */
+  /* background-image: url('./assets/background.jpg'); */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* Custom scrollbar for dark theme */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #dc2626, #ea580c);
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #ef4444, #f97316);
+}
+
+/* Glitch effect for title */
+@keyframes glitch {
+  0% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(-2px, -2px); }
+  60% { transform: translate(2px, 2px); }
+  80% { transform: translate(2px, -2px); }
+  100% { transform: translate(0); }
+}
+
+.glitch:hover {
+  animation: glitch 0.3s ease-in-out;
+}
+
+/* Pulsing glow effect */
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(220, 38, 38, 0.5); }
+  50% { box-shadow: 0 0 40px rgba(220, 38, 38, 0.8); }
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
 }
